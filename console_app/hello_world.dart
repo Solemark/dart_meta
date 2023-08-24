@@ -1,3 +1,1 @@
-String greet() {
-  return 'Hello World!';
-}
+String greet() => 'Hello World!';

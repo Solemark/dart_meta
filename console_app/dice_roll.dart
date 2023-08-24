@@ -1,5 +1,3 @@
 import 'dart:math';
 
-int diceRoll(int max) {
-  return Random().nextInt(max) + 1;
-}
+int diceRoll(int max) => Random().nextInt(max) + 1;

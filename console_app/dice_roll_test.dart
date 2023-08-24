@@ -1,9 +1,7 @@
 import 'package:test/test.dart';
 import 'dice_roll.dart';
 
-List<int> getData() {
-  return [4, 6, 8, 10, 12, 20];
-}
+List<int> getData() => [4, 6, 8, 10, 12, 20];
 
 bool isBetween(int max) {
   int number = diceRoll(max);
