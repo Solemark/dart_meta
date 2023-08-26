@@ -7,6 +7,9 @@ import 'reverse_array.dart';
 
 void main() {
   var (data, result) = getData();
-  test('Reverse Array', () => expect(result, reverseArray(data)));
-  test('Reverse Same Array', () => expect(result, reverseSameArray(data)));
+  group('Test Reverse Array', () {
+    test('Reverse Array with new Array',
+        () => expect(result, reverseArray(data)));
+    test('Reverse Same Array', () => expect(result, reverseSameArray(data)));
+  });
 }
