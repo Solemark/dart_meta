@@ -18,8 +18,3 @@ List<int> reverseArray(List<int> input) {
   }
   return output;
 }
-
-void main() {
-  print(reverseArray([5, 4, 3, 2, 1, 0]));
-  print(reverseSameArray([5, 4, 3, 2, 1, 0]));
-}
