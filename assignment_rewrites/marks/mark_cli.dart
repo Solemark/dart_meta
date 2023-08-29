@@ -13,7 +13,7 @@ class MarkCLI {
     print('University Mark Management System');
     while (true) {
       print(
-          '\n1 to add new student\n2 to search existing student\n3 to display all students\n4 to quit');
+          '\n1 to add new student\n2 to search existing student\n3 to display all students\nEnter any other key to quit');
       int input = int.parse(stdin.readLineSync() ?? '0');
       switch (input) {
         case 1:
@@ -25,10 +25,8 @@ class MarkCLI {
         case 3:
           displayStudents();
           break;
-        case 4:
-          exit(0);
         default:
-          print('unknown entry!');
+          exit(0);
       }
     }
   }
