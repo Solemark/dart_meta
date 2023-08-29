@@ -3,6 +3,12 @@ import 'mark.dart';
 
 class MarkCLI {
   final int maxStudents = 10;
+  final List<String> instructions = [
+    '1 to add new student',
+    '2 to search existing student',
+    '3 to display all students',
+    'Enter any other key to quit'
+  ];
   List<Mark> markArray = [];
 
   MarkCLI() {
@@ -12,9 +18,8 @@ class MarkCLI {
   void run() {
     print('University Mark Management System');
     while (true) {
-      print(
-          '\n1 to add new student\n2 to search existing student\n3 to display all students\nEnter any other key to quit');
-      int input = int.parse(stdin.readLineSync() ?? '0');
+      print('${linebreak()}\n${instructions.join('\n')}');
+      int? input = int.tryParse(stdin.readLineSync() ?? '0');
       switch (input) {
         case 1:
           newStudent();
@@ -40,11 +45,14 @@ class MarkCLI {
     print('Enter student name:');
     String name = stdin.readLineSync() ?? '';
 
-    print('Enter student mark (0-100):');
-    int mark = int.parse(stdin.readLineSync() ?? '0');
+    int? mark = null;
+    while (mark == null) {
+      print('Enter student mark (0-100):');
+      mark = int.tryParse(stdin.readLineSync() ?? '0');
+    }
 
     this.markArray.add(new Mark(name, mark));
-    print('Added student!\n${display(this.markArray.last)}');
+    print('${linebreak()}\nAdded student!\n${display(this.markArray.last)}');
   }
 
   void searchStudent() {
@@ -53,7 +61,7 @@ class MarkCLI {
 
     for (Mark item in this.markArray) {
       if (item.name.toLowerCase() == search.toLowerCase()) {
-        print('Found student!\n${display(item)}');
+        print('${linebreak()}\nFound student!\n${display(item)}');
         return;
       }
     }
@@ -62,12 +70,15 @@ class MarkCLI {
 
   void displayStudents() {
     int total = 0;
+    print(linebreak());
     for (Mark item in this.markArray) {
       print(display(item));
       total += item.mark;
     }
     print('Average mark is ${total / this.markArray.length}');
   }
+
+  String linebreak() => '--------------------';
 
   String display(Mark item) => 'Name: ${item.name}, Mark: ${item.mark}';
 }
