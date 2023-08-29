@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:test/test.dart';
-
 import 'write_to_csv.dart';
 
 (String, List<List<String>>) constructor() => (
@@ -19,10 +18,12 @@ Future<void> destructor(String filename) async => await destroyFile(filename);
 void main() {
   String filename = '';
   List<List<String>> data = [];
+
   setUp(() async {
     (filename, data) = constructor();
     await writeToCSV(filename, data);
   });
+
   tearDown(() async {
     await destructor(filename);
     filename = '';
@@ -30,17 +31,16 @@ void main() {
   });
 
   group('Test Write to CSV', () {
-    test('Test Filename Exists', () async {
-      bool result = await File('$filename').exists();
-      expect(true, result);
-    });
-    test('Test File Has Data', () async {
-      var csv = await File('$filename')
-          .openRead()
-          .transform(utf8.decoder)
-          .transform(CsvToListConverter())
-          .toList();
-      expect(data, csv);
-    });
+    test('Test Filename Exists',
+        () async => expect(true, await File('$filename').exists()));
+    test(
+        'Test File Has Data',
+        () async => expect(
+            data,
+            await File('$filename')
+                .openRead()
+                .transform(utf8.decoder)
+                .transform(CsvToListConverter())
+                .toList()));
   });
 }
