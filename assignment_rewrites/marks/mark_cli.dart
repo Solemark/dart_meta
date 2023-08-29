@@ -18,17 +18,19 @@ class MarkCLI {
   void run() {
     print('University Mark Management System');
     while (true) {
-      print('${linebreak()}\n${instructions.join('\n')}');
+      print('${linebreak()}${instructions.join('\n')}');
       int? input = int.tryParse(stdin.readLineSync() ?? '0');
       switch (input) {
         case 1:
-          newStudent();
+          (this.markArray.length < this.maxStudents)
+              ? print(newStudent())
+              : print('${linebreak()}MAX STUDENTS!');
           break;
         case 2:
-          searchStudent();
+          print(searchStudent());
           break;
         case 3:
-          displayStudents();
+          print(displayStudents());
           break;
         default:
           exit(0);
@@ -36,12 +38,7 @@ class MarkCLI {
     }
   }
 
-  void newStudent() {
-    if (this.markArray.length >= this.maxStudents) {
-      print('Max students reached!');
-      return;
-    }
-
+  String newStudent() {
     print('Enter student name:');
     String name = stdin.readLineSync() ?? '';
 
@@ -52,33 +49,33 @@ class MarkCLI {
     }
 
     this.markArray.add(new Mark(name, mark));
-    print('${linebreak()}\nAdded student!\n${display(this.markArray.last)}');
+    return '${linebreak()}NEW STUDENT:\n${display(this.markArray.last)}';
   }
 
-  void searchStudent() {
+  String searchStudent() {
+    String output = '${linebreak()}STUDENT NOT FOUND!';
     print('Enter name of student to search');
     String search = stdin.readLineSync() ?? '';
 
     for (Mark item in this.markArray) {
       if (item.name.toLowerCase() == search.toLowerCase()) {
-        print('${linebreak()}\nFound student!\n${display(item)}');
-        return;
+        output = '${linebreak()}FIND STUDENT:\n${display(item)}';
       }
     }
-    print('Student not found!');
+    return output;
   }
 
-  void displayStudents() {
+  String displayStudents() {
+    String output = '${linebreak()}DISPLAY ALL STUDENTS:';
     int total = 0;
-    print(linebreak());
     for (Mark item in this.markArray) {
-      print(display(item));
+      output += '\n${display(item)}';
       total += item.mark;
     }
-    print('Average mark is ${total / this.markArray.length}');
+    return '$output\nAverage mark is ${total / this.markArray.length}';
   }
 
-  String linebreak() => '--------------------';
+  String linebreak() => '--------------------\n';
 
   String display(Mark item) => 'Name: ${item.name}, Mark: ${item.mark}';
 }
