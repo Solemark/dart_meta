@@ -27,23 +27,18 @@ String getGrade(int mark, String name) {
 void cli() {
   print('\t\tMark Entry System');
   final max = 3;
-  String name = '';
-  int mark = 0;
   int total = 0;
-  int average = 0;
-
   for (int i = max; i > 0; i--) {
     print('Enter student name:');
-    name = stdin.readLineSync() ?? '';
+    String name = stdin.readLineSync() ?? '';
 
     print('Enter student mark (0-100):');
-    mark = int.parse(stdin.readLineSync() ?? '0');
+    int mark = int.parse(stdin.readLineSync() ?? '0');
 
     print(getGrade(mark, name));
     total += mark;
   }
-  average = (total / max).round();
-  print('The average mark is $average');
+  print('The average mark is ${(total / max).round()}');
 }
 
 void main() {

@@ -30,10 +30,8 @@ class Week3 {
   }
 
   void cli() {
-    int mark = 0;
-
     print('Enter student grade (0-100):');
-    mark = int.parse(stdin.readLineSync() ?? '0');
+    int mark = int.parse(stdin.readLineSync() ?? '0');
 
     print(getGrade(mark));
   }
