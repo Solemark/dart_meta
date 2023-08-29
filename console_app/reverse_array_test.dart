@@ -1,5 +1,4 @@
 import 'package:test/test.dart';
-
 import 'reverse_array.dart';
 
 (List<int>, List<int>) getData() =>

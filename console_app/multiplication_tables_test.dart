@@ -1,5 +1,4 @@
 import 'package:test/test.dart';
-
 import 'multiplication_tables.dart';
 
 (List<List<String>>, List<int>) getData() => (

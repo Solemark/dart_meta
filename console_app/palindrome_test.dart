@@ -1,5 +1,4 @@
 import 'package:test/test.dart';
-
 import 'palindrome.dart';
 
 (List<String>, List<bool>) getData() => (['DAD', 'Dad'], [true, false]);
