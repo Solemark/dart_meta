@@ -46,7 +46,7 @@ class MarkCLI {
     int mark = int.parse(stdin.readLineSync() ?? '0');
 
     this.markArray.add(new Mark(name, mark));
-    print('Added student $name, $mark');
+    print('Added student!\n${display(this.markArray.last)}');
   }
 
   void searchStudent() {
@@ -55,7 +55,7 @@ class MarkCLI {
 
     for (Mark item in this.markArray) {
       if (item.name.toLowerCase() == search.toLowerCase()) {
-        print('Found student!\nName: ${item.name}\nMark: ${item.mark}');
+        print('Found student!\n${display(item)}');
         return;
       }
     }
@@ -65,9 +65,11 @@ class MarkCLI {
   void displayStudents() {
     int total = 0;
     for (Mark item in this.markArray) {
-      print('Name: ${item.name}, Mark: ${item.mark}');
+      print(display(item));
       total += item.mark;
     }
     print('Average mark is ${total / this.markArray.length}');
   }
+
+  String display(Mark item) => 'Name: ${item.name}, Mark: ${item.mark}';
 }
