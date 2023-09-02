@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'booking.dart';
 
-class SearchBookingCLI {
+class SearchCLI {
   Luxury? bookingSearch(List<Luxury> bookingList) {
     Luxury? output = null;
     String? bookingID = null;

@@ -1,6 +1,6 @@
 import 'booking.dart';
 
-class ListBookingCLI {
+class ListCLI {
   String listBookings(List<Luxury> bookingList) {
     String output = '';
     for (Luxury item in bookingList) {

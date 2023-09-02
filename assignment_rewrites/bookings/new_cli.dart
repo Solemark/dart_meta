@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'booking.dart';
 
-class NewBookingCLI {
+class NewCLI {
   Luxury createNewBooking() {
     return new Luxury(
         this._getGardenArea(),

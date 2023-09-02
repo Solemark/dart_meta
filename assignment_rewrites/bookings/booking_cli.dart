@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'booking.dart';
-import 'list_booking_cli.dart';
-import 'new_booking_cli.dart';
-import 'search_booking_cli.dart';
+import 'list_cli.dart';
+import 'new_cli.dart';
+import 'search_cli.dart';
 
 class BookingCLI {
   final List<String> instructions = [
@@ -47,16 +47,16 @@ class BookingCLI {
   }
 
   String _newBooking() {
-    this.bookingList.add(NewBookingCLI().createNewBooking());
+    this.bookingList.add(NewCLI().createNewBooking());
     return this.bookingList.last.toString();
   }
 
   String _searchBooking() {
-    Luxury? item = SearchBookingCLI().bookingSearch(this.bookingList);
+    Luxury? item = SearchCLI().bookingSearch(this.bookingList);
     return (item != null) ? item.toString() : 'Booking not found!';
   }
 
-  String _listBooking() => ListBookingCLI().listBookings(this.bookingList);
+  String _listBooking() => ListCLI().listBookings(this.bookingList);
 
   String _updateBooking() => 'Not Implimented!';
   String _removeBooking() => 'Not Implimented!';
