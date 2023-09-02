@@ -1,9 +1,7 @@
 class Booking {
   int _gardenArea;
-  int _gardenAreaCost;
   int _numberOfWeeks;
   int _rooms;
-  int _roomsCost;
   String _address;
   String _bookingDate;
   String _bookingID;
@@ -12,10 +10,8 @@ class Booking {
 
   Booking(
       this._gardenArea,
-      this._gardenAreaCost,
       this._numberOfWeeks,
       this._rooms,
-      this._roomsCost,
       this._address,
       this._bookingDate,
       this._bookingID,
@@ -25,9 +21,7 @@ class Booking {
   int get gardenArea => this._gardenArea;
   void set gardenArea(int gardenArea) => this._gardenArea = gardenArea;
 
-  int get gardenAreaCost => this._gardenAreaCost;
-  void set gardenAreaCost(int gardenAreaCost) =>
-      this._gardenAreaCost = gardenAreaCost;
+  int get gardenAreaCost => (this._gardenArea * 2);
 
   int get numberOfWeeks => this._numberOfWeeks;
   void set numberOfWeeks(int numberOfWeeks) =>
@@ -36,8 +30,7 @@ class Booking {
   int get rooms => this._rooms;
   void set rooms(int rooms) => this._rooms = rooms;
 
-  int get roomsCost => this._roomsCost;
-  void set roomsCost(int roomsCost) => this._roomsCost = roomsCost;
+  int get roomsCost => (this._rooms * 5);
 
   String get address => this._address;
   void set address(String address) => this._address = address;
@@ -62,12 +55,9 @@ class Luxury extends Booking {
   bool _poolMaintenance;
 
   Luxury(
-      //TODO check what happens when you append super like: Luxury():super();
       super._gardenArea,
-      super._gardenAreaCost,
       super._numberOfWeeks,
       super._rooms,
-      super._roomsCost,
       super._address,
       super._bookingDate,
       super._bookingID,
@@ -94,4 +84,7 @@ class Luxury extends Booking {
     }
     return output;
   }
+
+  int getTotalCost() =>
+      (getLuxuryCost() + super.gardenAreaCost + super.roomsCost);
 }
