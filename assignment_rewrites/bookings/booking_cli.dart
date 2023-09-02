@@ -3,6 +3,7 @@ import 'booking.dart';
 import 'list_cli.dart';
 import 'new_cli.dart';
 import 'search_cli.dart';
+import 'update_cli.dart';
 
 class BookingCLI {
   final List<String> instructions = [
@@ -51,15 +52,14 @@ class BookingCLI {
     return this.bookingList.last.toString();
   }
 
-  String _search() {
-    Luxury? item = SearchCLI().search(this.bookingList);
-    return (item != null) ? item.toString() : 'Booking not found!';
-  }
-
+  String _search() => SearchCLI().search(this.bookingList);
   String _list() => ListCLI().list(this.bookingList);
 
-  String _update() => 'Not Implimented!';
-  String _remove() => 'Not Implimented!';
+  String _update() {
+    this.bookingList = UpdateCLI().update(this.bookingList);
+    return 'Updated record!\n${this._list()}';
+  }
 
+  String _remove() => 'Not Implimented!';
   String _linebreak() => '--------------------\n';
 }

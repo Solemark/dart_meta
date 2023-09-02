@@ -2,7 +2,7 @@ import 'dart:io';
 import 'booking.dart';
 
 class SearchCLI {
-  Luxury? search(List<Luxury> bookingList) {
+  String search(List<Luxury> bookingList) {
     Luxury? output = null;
     String? bookingID = null;
     while (bookingID == null) {
@@ -14,6 +14,6 @@ class SearchCLI {
         output = item;
       }
     }
-    return output;
+    return (output != null) ? output.toString() : 'Booking not found!';
   }
 }
