@@ -26,19 +26,19 @@ class BookingCLI {
       int? input = int.tryParse(stdin.readLineSync() ?? '0');
       switch (input) {
         case 1:
-          print(_newBooking());
+          print(_new());
           break;
         case 2:
-          print(_searchBooking());
+          print(_search());
           break;
         case 3:
-          print(_listBooking());
+          print(_list());
           break;
         case 4:
-          print(_updateBooking());
+          print(_update());
           break;
         case 5:
-          print(_removeBooking());
+          print(_remove());
           break;
         default:
           exit(0);
@@ -46,20 +46,20 @@ class BookingCLI {
     }
   }
 
-  String _newBooking() {
-    this.bookingList.add(NewCLI().createNewBooking());
+  String _new() {
+    this.bookingList.add(NewCLI().create());
     return this.bookingList.last.toString();
   }
 
-  String _searchBooking() {
-    Luxury? item = SearchCLI().bookingSearch(this.bookingList);
+  String _search() {
+    Luxury? item = SearchCLI().search(this.bookingList);
     return (item != null) ? item.toString() : 'Booking not found!';
   }
 
-  String _listBooking() => ListCLI().listBookings(this.bookingList);
+  String _list() => ListCLI().list(this.bookingList);
 
-  String _updateBooking() => 'Not Implimented!';
-  String _removeBooking() => 'Not Implimented!';
+  String _update() => 'Not Implimented!';
+  String _remove() => 'Not Implimented!';
 
   String _linebreak() => '--------------------\n';
 }

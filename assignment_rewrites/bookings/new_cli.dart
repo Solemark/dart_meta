@@ -2,7 +2,7 @@ import 'dart:io';
 import 'booking.dart';
 
 class NewCLI {
-  Luxury createNewBooking() {
+  Luxury create() {
     return new Luxury(
         this._getGardenArea(),
         this._getNumWeeks(),

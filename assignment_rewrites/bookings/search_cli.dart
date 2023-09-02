@@ -2,7 +2,7 @@ import 'dart:io';
 import 'booking.dart';
 
 class SearchCLI {
-  Luxury? bookingSearch(List<Luxury> bookingList) {
+  Luxury? search(List<Luxury> bookingList) {
     Luxury? output = null;
     String? bookingID = null;
     while (bookingID == null) {
