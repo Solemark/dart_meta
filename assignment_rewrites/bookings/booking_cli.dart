@@ -1,9 +1,6 @@
 import 'dart:io';
 import 'booking.dart';
-import 'list_cli.dart';
-import 'new_cli.dart';
-import 'search_cli.dart';
-import 'update_cli.dart';
+import 'bookings.dart';
 
 class BookingCLI {
   final List<String> instructions = [
@@ -15,6 +12,7 @@ class BookingCLI {
     'Enter any other key to quit'
   ];
   List<Luxury> bookingList = [];
+  Bookings bookings = new Bookings();
 
   BookingCLI() {
     _run();
@@ -48,18 +46,22 @@ class BookingCLI {
   }
 
   String _new() {
-    this.bookingList.add(NewCLI().create());
+    this.bookingList.add(bookings.create());
     return this.bookingList.last.toString();
   }
 
-  String _search() => SearchCLI().search(this.bookingList);
-  String _list() => ListCLI().list(this.bookingList);
+  String _search() => bookings.search(this.bookingList);
+  String _list() => bookings.list(this.bookingList);
 
   String _update() {
-    this.bookingList = UpdateCLI().update(this.bookingList);
-    return 'Updated record!\n${this._list()}';
+    this.bookingList = bookings.update(this.bookingList);
+    return '${this._list()}';
   }
 
-  String _remove() => 'Not Implimented!';
+  String _remove() {
+    this.bookingList = bookings.remove(this.bookingList);
+    return '${this._list()}';
+  }
+
   String _linebreak() => '--------------------\n';
 }

@@ -4,7 +4,7 @@ import 'booking.dart';
 class RemoveCLI {
   List<Luxury> remove(List<Luxury> bookingList) {
     List<Luxury> output = [];
-    String? input = '';
+    String? input = null;
     while (input == null) {
       print('Enter the ID of the record to be deleted:');
       input = stdin.readLineSync();
