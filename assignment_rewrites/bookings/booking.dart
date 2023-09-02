@@ -48,6 +48,12 @@ class Booking {
   String get propertyOwnerName => this._propertyOwnerName;
   void set propertyOwnerName(String propertyOwnerName) =>
       this._propertyOwnerName = propertyOwnerName;
+
+  int getBookingCost() => this.gardenAreaCost + this.roomsCost;
+
+  @override
+  String toString() =>
+      'Garden Area: ${this.gardenArea} : \$${this.gardenAreaCost}, ${this.rooms} : \$${this.roomsCost}, Weeks: ${this.numberOfWeeks}, Address: ${this.address}, Booking: ${this.bookingID} : ${this.bookingDate}, Contact Number: ${this.contactNumber}, Owner: ${this.propertyOwnerName}\nBooking Cost: \$${this.getBookingCost()}';
 }
 
 class Luxury extends Booking {
@@ -87,4 +93,8 @@ class Luxury extends Booking {
 
   int getTotalCost() =>
       (getLuxuryCost() + super.gardenAreaCost + super.roomsCost);
+
+  @override
+  String toString() =>
+      '${super.toString()}, Luxuries: ${this.securityAlarmCheck} : ${this.poolMaintenance} : \$${this.getLuxuryCost()}\nTotal Cost: \$${getTotalCost()}';
 }
