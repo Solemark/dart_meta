@@ -1,5 +1,5 @@
-import 'booking_cli.dart';
+import 'booking_gui.dart';
 
 void main() {
-  BookingCLI();
+  BookingGUI();
 }
