@@ -23,47 +23,68 @@ class BookingGUI {
   final ButtonElement removeButton = querySelector('#remove') as ButtonElement;
   final ButtonElement clearButton = querySelector('#clear') as ButtonElement;
   final ButtonElement saveButton = querySelector('#save') as ButtonElement;
+  final TextAreaElement displayArea = querySelector('#displayArea') as TextAreaElement;
 
   BookingGUI() {
     this.bookingID.value = (this.bookingList.length + 1).toString();
-    this.submitButton.onClick.listen(submit);
-    this.searchButton.onClick.listen(search);
-    this.updateButton.onClick.listen(update);
-    this.removeButton.onClick.listen(remove);
-    this.clearButton.onClick.listen(clear);
-    this.saveButton.onClick.listen(save);
+    this.submitButton.onClick.listen(this.submit);
+    this.searchButton.onClick.listen(this.search);
+    this.updateButton.onClick.listen(this.update);
+    this.removeButton.onClick.listen(this.remove);
+    this.clearButton.onClick.listen(this.clear);
+    this.saveButton.onClick.listen(this.save);
   }
 
   void submit(Event e) {
-    bookingList.add(new Luxury(
-        int.parse(gardenArea.value ?? '0'),
-        int.parse(numberOfWeeks.value ?? '0'),
-        int.parse(rooms.value ?? '0'),
-        address.value ?? '',
-        bookingDate.value ?? '',
-        bookingID.value ?? '',
-        contactNumber.value ?? '',
-        propertyOwnerName.value ?? '',
-        securityAlarmCheck.checked ?? false,
-        poolMaintenance.checked ?? false));
+    Luxury item = new Luxury(
+        int.parse(this.gardenArea.value ?? '0'),
+        int.parse(this.numberOfWeeks.value ?? '0'),
+        int.parse(this.rooms.value ?? '0'),
+        this.address.value ?? '',
+        this.bookingDate.value ?? '',
+        this.bookingID.value ?? '',
+        this.contactNumber.value ?? '',
+        this.propertyOwnerName.value ?? '',
+        this.securityAlarmCheck.checked ?? false,
+        this.poolMaintenance.checked ?? false);
 
-    clear(e);
+    for (Luxury booking in this.bookingList) {
+      if (booking.bookingID == item.bookingID) {
+        booking = item;
+        this.clear(e);
+        this.displayArea.value = booking.toString();
+        return;
+      }
+    }
+    this.bookingList.add(item);
+    this.clear(e);
+    this.displayArea.value = this.bookingList.last.toString();
   }
 
-  void search(Event e) => print(bookingID.value);
+  void search(Event e) {
+    String output = 'Booking ID not found!';
+    for (Luxury booking in this.bookingList) {
+      if (booking.bookingID == this.bookingID.value) {
+        output = booking.toString();
+      }
+    }
+    displayArea.value = output;
+  }
+
   void update(Event e) => UnimplementedError;
   void remove(Event e) => UnimplementedError;
   void clear(Event e) {
-    bookingID.value = (this.bookingList.length + 1).toString();
-    gardenArea.value = '';
-    numberOfWeeks.value = '';
-    rooms.value = '';
-    address.value = '';
-    bookingDate.value = '';
-    contactNumber.value = '';
-    propertyOwnerName.value = '';
-    securityAlarmCheck.checked = false;
-    poolMaintenance.checked = false;
+    this.bookingID.value = (this.bookingList.length + 1).toString();
+    this.gardenArea.value = '';
+    this.numberOfWeeks.value = '';
+    this.rooms.value = '';
+    this.address.value = '';
+    this.bookingDate.value = '';
+    this.contactNumber.value = '';
+    this.propertyOwnerName.value = '';
+    this.securityAlarmCheck.checked = false;
+    this.poolMaintenance.checked = false;
+    this.displayArea.value = '';
   }
 
   void save(Event e) => UnimplementedError;
