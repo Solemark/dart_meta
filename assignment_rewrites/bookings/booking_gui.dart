@@ -68,11 +68,26 @@ class BookingGUI {
         output = booking.toString();
       }
     }
+    clear(e);
     displayArea.value = output;
   }
 
-  void update(Event e) => UnimplementedError;
-  void remove(Event e) => UnimplementedError;
+  void update(Event e) {
+    for (Luxury booking in this.bookingList) {
+      if (booking.bookingID == this.bookingID.value) {
+        this.submit(e);
+      }
+    }
+  }
+
+  void remove(Event e) {
+    for (Luxury booking in this.bookingList) {
+      if (booking.bookingID == this.bookingID.value) {
+        this.bookingList.remove(booking);
+      }
+    }
+  }
+
   void clear(Event e) {
     this.bookingID.value = (this.bookingList.length + 1).toString();
     this.gardenArea.value = '';
