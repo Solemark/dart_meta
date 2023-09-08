@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'booking.dart';
+import '../data/booking.dart';
 import 'bookings.dart';
 
 class BookingCLI {

@@ -1,4 +1,4 @@
-import 'booking.dart';
+import '../data/booking.dart';
 import 'list_cli.dart';
 import 'new_cli.dart';
 import 'remove_cli.dart';
