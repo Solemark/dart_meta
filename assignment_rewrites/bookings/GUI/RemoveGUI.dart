@@ -1,5 +1,5 @@
-import '../data/booking.dart';
-import 'gui.dart';
+import '../data/Booking.dart';
+import 'GUI.dart';
 
 class RemoveGUI extends GUI {
   RemoveGUI() {

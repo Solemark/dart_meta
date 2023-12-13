@@ -1,4 +1,4 @@
-import 'GUI/booking_gui.dart';
+import 'GUI/BookingGUI.dart';
 
 void main() {
   BookingGUI();

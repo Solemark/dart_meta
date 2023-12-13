@@ -1,5 +1,5 @@
-import 'gui.dart';
-import '../data/booking.dart';
+import 'GUI.dart';
+import '../data/Booking.dart';
 
 class UpdateGUI extends GUI {
   UpdateGUI() {
@@ -9,7 +9,7 @@ class UpdateGUI extends GUI {
   void _run() {
     for (Luxury booking in this.bookingList) {
       if (booking.bookingID == this.bookingID.value) {
-        this.bookings.create();
+        //this.bookings.create();
       }
     }
   }

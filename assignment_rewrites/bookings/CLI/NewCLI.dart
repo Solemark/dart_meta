@@ -1,5 +1,5 @@
 import 'dart:io';
-import '../data/booking.dart';
+import '../data/Booking.dart';
 
 class NewCLI {
   Luxury create() {

@@ -1,4 +1,4 @@
-import '../data/booking.dart';
+import '../data/Booking.dart';
 
 class ListCLI {
   String list(List<Luxury> bookingList) {

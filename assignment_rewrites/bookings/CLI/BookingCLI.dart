@@ -1,6 +1,6 @@
 import 'dart:io';
-import '../data/booking.dart';
-import 'bookings.dart';
+import '../data/Booking.dart';
+import 'Bookings.dart';
 
 class BookingCLI {
   final List<String> instructions = [

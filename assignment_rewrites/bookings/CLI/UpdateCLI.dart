@@ -1,6 +1,6 @@
 import 'dart:io';
-import '../data/booking.dart';
-import 'bookings.dart';
+import '../data/Booking.dart';
+import 'Bookings.dart';
 
 class UpdateCLI {
   List<Luxury> update(List<Luxury> bookingList) {
