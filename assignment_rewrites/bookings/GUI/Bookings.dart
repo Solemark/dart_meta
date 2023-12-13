@@ -10,7 +10,6 @@ class Bookings {
   BookingGUI clear(BookingGUI gui) => ClearGUI().run(gui);
   BookingGUI create(BookingGUI gui) => CreateGUI().run(gui);
   BookingGUI search(BookingGUI gui) => SearchGUI().run(gui);
-  //void list() => ListGUI();
   //void remove() => RemoveGUI();
   //void update() => UpdateGUI();
   //void save() => FileGUI();
