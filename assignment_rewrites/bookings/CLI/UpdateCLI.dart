@@ -11,7 +11,9 @@ class UpdateCLI {
       input = stdin.readLineSync();
     }
     int index = bookingList.indexWhere((item) => item.bookingID.toLowerCase() == input!.toLowerCase());
-    bookingList[index] = bookings.create();
+    if (index != -1) {
+      bookingList[index] = bookings.create();
+    }
     return bookingList;
   }
 }
