@@ -1,10 +1,8 @@
 import 'dart:html';
 import '../data/Booking.dart';
-import 'Bookings.dart';
 
 class GUI {
   List<Luxury> bookingList = [];
-  Bookings bookings = new Bookings();
   InputElement gardenArea = InputElement();
   InputElement numberOfWeeks = InputElement();
   InputElement rooms = InputElement();

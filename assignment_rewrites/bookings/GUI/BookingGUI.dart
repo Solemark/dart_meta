@@ -1,7 +1,9 @@
 import 'dart:html';
+import 'Bookings.dart';
 import 'GUI.dart';
 
 class BookingGUI extends GUI {
+  Bookings bookings = new Bookings();
   BookingGUI() {
     this.bookingID.value = (this.bookingList.length + 1).toString();
     this.clearButton.onClick.listen(this.clear);
