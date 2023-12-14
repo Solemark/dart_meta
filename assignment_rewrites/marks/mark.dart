@@ -1,12 +1,9 @@
 class Mark {
-  String _name;
-  int _mark;
+  String name;
+  int mark;
 
-  Mark(this._name, this._mark);
+  Mark(this.name, this.mark);
 
-  String get name => this._name;
-  void set name(String name) => this._name = name;
-
-  int get mark => this._mark;
-  void set mark(int mark) => this._mark = mark;
+  @override
+  String toString() => '$name, $mark';
 }
