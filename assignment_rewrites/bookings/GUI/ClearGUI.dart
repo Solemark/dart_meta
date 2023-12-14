@@ -2,7 +2,11 @@ import 'BookingGUI.dart';
 
 class ClearGUI {
   BookingGUI run(BookingGUI gui) {
-    gui.bookingID.value = (gui.bookingList.length + 1).toString();
+    int newID = 1;
+    if (gui.bookingList.isNotEmpty) {
+      newID = int.parse(gui.bookingList.last.bookingID) + 1;
+    }
+    gui.bookingID.value = newID.toString();
     gui.gardenArea.value = '';
     gui.numberOfWeeks.value = '';
     gui.rooms.value = '';

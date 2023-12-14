@@ -3,7 +3,6 @@ import 'ClearGUI.dart';
 import 'CreateGUI.dart';
 import 'SearchGUI.dart';
 import 'RemoveGUI.dart';
-import 'FileGUI.dart';
 import 'UpdateGUI.dart';
 
 class Bookings {
@@ -11,7 +10,5 @@ class Bookings {
   BookingGUI create(BookingGUI gui) => CreateGUI().run(gui);
   BookingGUI search(BookingGUI gui) => SearchGUI().run(gui);
   BookingGUI update(BookingGUI gui) => UpdateGUI().run(gui);
-  //void remove() => RemoveGUI();
-  //void save() => FileGUI();
-  //void load() => FileGUI().load();
+  BookingGUI remove(BookingGUI gui) => RemoveGUI().run(gui);
 }

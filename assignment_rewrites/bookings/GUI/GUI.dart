@@ -20,7 +20,6 @@ class GUI {
   ButtonElement updateButton = ButtonElement();
   ButtonElement removeButton = ButtonElement();
   ButtonElement clearButton = ButtonElement();
-  ButtonElement saveButton = ButtonElement();
   TextAreaElement displayArea = TextAreaElement();
 
   GUI() {
@@ -42,7 +41,6 @@ class GUI {
     this.updateButton = querySelector('#update') as ButtonElement;
     this.removeButton = querySelector('#remove') as ButtonElement;
     this.clearButton = querySelector('#clear') as ButtonElement;
-    this.saveButton = querySelector('#save') as ButtonElement;
     this.displayArea = querySelector('#displayArea') as TextAreaElement;
   }
 }

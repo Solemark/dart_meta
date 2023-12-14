@@ -8,8 +8,15 @@ class Booking {
   String _contactNumber;
   String _propertyOwnerName;
 
-  Booking(this._gardenArea, this._numberOfWeeks, this._rooms, this._address, this._bookingDate, this._bookingID,
-      this._contactNumber, this._propertyOwnerName);
+  Booking(
+      this._gardenArea,
+      this._numberOfWeeks,
+      this._rooms,
+      this._address,
+      this._bookingDate,
+      this._bookingID,
+      this._contactNumber,
+      this._propertyOwnerName);
 
   int get gardenArea => this._gardenArea;
   void set gardenArea(int gardenArea) => this._gardenArea = gardenArea;
@@ -17,7 +24,8 @@ class Booking {
   int get gardenAreaCost => (this._gardenArea * 2);
 
   int get numberOfWeeks => this._numberOfWeeks;
-  void set numberOfWeeks(int numberOfWeeks) => this._numberOfWeeks = numberOfWeeks;
+  void set numberOfWeeks(int numberOfWeeks) =>
+      this._numberOfWeeks = numberOfWeeks;
 
   int get rooms => this._rooms;
   void set rooms(int rooms) => this._rooms = rooms;
@@ -34,15 +42,25 @@ class Booking {
   void set bookingID(String bookingID) => this._bookingID = bookingID;
 
   String get contactNumber => this._contactNumber;
-  void set contactNumber(String contactNumber) => this._contactNumber = contactNumber;
+  void set contactNumber(String contactNumber) =>
+      this._contactNumber = contactNumber;
 
   String get propertyOwnerName => this._propertyOwnerName;
-  void set propertyOwnerName(String propertyOwnerName) => this._propertyOwnerName = propertyOwnerName;
+  void set propertyOwnerName(String propertyOwnerName) =>
+      this._propertyOwnerName = propertyOwnerName;
 
   int getBookingCost() => this.gardenAreaCost + this.roomsCost;
 
-  String toCSV() =>
-      '${this.gardenArea}, ${this.numberOfWeeks}, ${this.rooms}, ${this.address}, ${this.bookingDate}, ${this.bookingID}, ${this.contactNumber}, ${this.propertyOwnerName}';
+  List<String> toCSV() => [
+        this.gardenArea.toString(),
+        this.numberOfWeeks.toString(),
+        this.rooms.toString(),
+        this.address,
+        this.bookingDate,
+        this.bookingID,
+        this.contactNumber,
+        this.propertyOwnerName
+      ];
 
   @override
   String toString() =>
@@ -53,14 +71,25 @@ class Luxury extends Booking {
   bool _securityAlarmCheck;
   bool _poolMaintenance;
 
-  Luxury(super._gardenArea, super._numberOfWeeks, super._rooms, super._address, super._bookingDate, super._bookingID,
-      super._contactNumber, super._propertyOwnerName, this._securityAlarmCheck, this._poolMaintenance);
+  Luxury(
+      super._gardenArea,
+      super._numberOfWeeks,
+      super._rooms,
+      super._address,
+      super._bookingDate,
+      super._bookingID,
+      super._contactNumber,
+      super._propertyOwnerName,
+      this._securityAlarmCheck,
+      this._poolMaintenance);
 
   bool get securityAlarmCheck => this._securityAlarmCheck;
-  void set securityAlarmCheck(bool securityAlarmCheck) => this._securityAlarmCheck = securityAlarmCheck;
+  void set securityAlarmCheck(bool securityAlarmCheck) =>
+      this._securityAlarmCheck = securityAlarmCheck;
 
   bool get poolMaintenance => this._poolMaintenance;
-  void set poolMaintenance(bool poolMaintenance) => this._poolMaintenance = poolMaintenance;
+  void set poolMaintenance(bool poolMaintenance) =>
+      this._poolMaintenance = poolMaintenance;
 
   int getLuxuryCost() {
     int output = 0;
@@ -73,9 +102,18 @@ class Luxury extends Booking {
     return output;
   }
 
-  int getTotalCost() => (getLuxuryCost() + super.gardenAreaCost + super.roomsCost);
+  int getTotalCost() =>
+      (getLuxuryCost() + super.gardenAreaCost + super.roomsCost);
 
-  String toCSV() => '${super.toCSV()}, ${this.securityAlarmCheck}, ${this.poolMaintenance}';
+  List<String> toCSV() {
+    List<String> output = [];
+    output.addAll([
+      ...super.toCSV(),
+      this.securityAlarmCheck.toString(),
+      this.poolMaintenance.toString()
+    ]);
+    return output;
+  }
 
   @override
   String toString() =>

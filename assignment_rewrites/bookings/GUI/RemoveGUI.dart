@@ -1,16 +1,13 @@
 import '../data/Booking.dart';
-import 'GUI.dart';
+import 'BookingGUI.dart';
 
-class RemoveGUI extends GUI {
-  RemoveGUI() {
-    _run();
-  }
-
-  void _run() {
-    for (Luxury booking in this.bookingList) {
-      if (booking.bookingID == this.bookingID.value) {
-        this.bookingList.remove(booking);
+class RemoveGUI {
+  BookingGUI run(BookingGUI gui) {
+    for (Luxury booking in gui.bookingList) {
+      if (booking.bookingID == gui.bookingID.value) {
+        gui.bookingList.remove(booking);
       }
     }
+    return gui;
   }
 }
