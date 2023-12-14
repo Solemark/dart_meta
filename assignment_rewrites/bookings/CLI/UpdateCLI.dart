@@ -10,12 +10,8 @@ class UpdateCLI {
       print('Enter the ID of the record to be updated:');
       input = stdin.readLineSync();
     }
-    for (int i = 0; i < bookingList.length; i++) {
-      if (bookingList[i].bookingID.toLowerCase() == input.toLowerCase()) {
-        print('Found Record!');
-        bookingList[i] = bookings.create();
-      }
-    }
+    int index = bookingList.indexWhere((item) => item.bookingID.toLowerCase() == input!.toLowerCase());
+    bookingList[index] = bookings.create();
     return bookingList;
   }
 }
