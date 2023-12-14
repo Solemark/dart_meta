@@ -51,17 +51,6 @@ class Booking {
 
   int getBookingCost() => this.gardenAreaCost + this.roomsCost;
 
-  List<String> toCSV() => [
-        this.gardenArea.toString(),
-        this.numberOfWeeks.toString(),
-        this.rooms.toString(),
-        this.address,
-        this.bookingDate,
-        this.bookingID,
-        this.contactNumber,
-        this.propertyOwnerName
-      ];
-
   @override
   String toString() =>
       'Garden Area: ${this.gardenArea} : \$${this.gardenAreaCost}, ${this.rooms} : \$${this.roomsCost}, Weeks: ${this.numberOfWeeks}, Address: ${this.address}, Booking: ${this.bookingID} : ${this.bookingDate}, Contact Number: ${this.contactNumber}, Owner: ${this.propertyOwnerName}\nBooking Cost: \$${this.getBookingCost()}';
@@ -104,16 +93,6 @@ class Luxury extends Booking {
 
   int getTotalCost() =>
       (getLuxuryCost() + super.gardenAreaCost + super.roomsCost);
-
-  List<String> toCSV() {
-    List<String> output = [];
-    output.addAll([
-      ...super.toCSV(),
-      this.securityAlarmCheck.toString(),
-      this.poolMaintenance.toString()
-    ]);
-    return output;
-  }
 
   @override
   String toString() =>
