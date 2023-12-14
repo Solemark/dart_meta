@@ -4,19 +4,20 @@ import '../data/Booking.dart';
 class NewCLI {
   Luxury create() {
     return new Luxury(
-        this._getGardenArea(),
-        this._getNumWeeks(),
-        this._getRooms(),
-        this._getAddress(),
-        this._getBookingDate(),
-        this._getBookingID(),
-        this._getContactNumber(),
-        this._getPropertyOwnerName(),
-        this._getSecurityAlarmCheck(),
-        this._getPoolMaintenance());
+      gardenArea: this.gardenArea,
+      numberOfWeeks: this.numWeeks,
+      rooms: this.rooms,
+      address: this.address,
+      bookingDate: this.bookingDate,
+      bookingID: this.bookingID,
+      contactNumber: this.contactNumber,
+      propertyOwnerName: this.propertyOwnerName,
+      securityAlarmCheck: this.securityAlarmCheck,
+      poolMaintenance: this.poolMaintenance,
+    );
   }
 
-  int _getGardenArea() {
+  int get gardenArea {
     int? gardenArea = null;
     while (gardenArea == null) {
       print('Enter garden area:');
@@ -25,7 +26,7 @@ class NewCLI {
     return gardenArea;
   }
 
-  int _getNumWeeks() {
+  int get numWeeks {
     int? numberOfWeeks = null;
     while (numberOfWeeks == null) {
       print('Enter number of weeks of stay:');
@@ -34,7 +35,7 @@ class NewCLI {
     return numberOfWeeks;
   }
 
-  int _getRooms() {
+  int get rooms {
     int? rooms = null;
     while (rooms == null) {
       print('Enter number of rooms:');
@@ -43,7 +44,7 @@ class NewCLI {
     return rooms;
   }
 
-  String _getAddress() {
+  String get address {
     String? address = null;
     while (address == null) {
       print('Enter address:');
@@ -52,7 +53,7 @@ class NewCLI {
     return address;
   }
 
-  String _getBookingDate() {
+  String get bookingDate {
     String? bookingDate = null;
     while (bookingDate == null) {
       print('Enter date of booking:');
@@ -61,7 +62,7 @@ class NewCLI {
     return bookingDate;
   }
 
-  String _getBookingID() {
+  String get bookingID {
     String? bookingID = null;
     while (bookingID == null) {
       print('Enter booking ID:');
@@ -70,7 +71,7 @@ class NewCLI {
     return bookingID;
   }
 
-  String _getContactNumber() {
+  String get contactNumber {
     String? contactNumber = null;
     while (contactNumber == null) {
       print('Enter contact number:');
@@ -79,7 +80,7 @@ class NewCLI {
     return contactNumber;
   }
 
-  String _getPropertyOwnerName() {
+  String get propertyOwnerName {
     String? propertyOwnerName = null;
     while (propertyOwnerName == null) {
       print('Enter property owner name:');
@@ -88,7 +89,7 @@ class NewCLI {
     return propertyOwnerName;
   }
 
-  bool _getSecurityAlarmCheck() {
+  bool get securityAlarmCheck {
     bool? securityAlarmCheck = null;
     while (securityAlarmCheck == null) {
       print('Perform security alarm check? (Y/N)');
@@ -105,7 +106,7 @@ class NewCLI {
     return securityAlarmCheck;
   }
 
-  bool _getPoolMaintenance() {
+  bool get poolMaintenance {
     bool? poolMaintenance = null;
     while (poolMaintenance == null) {
       print('Perform pool maintenance? (Y/N)');

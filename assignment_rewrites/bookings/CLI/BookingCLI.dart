@@ -21,23 +21,26 @@ class BookingCLI {
   void _run() {
     print('Booking Management System');
     while (true) {
-      print('${_linebreak()}${instructions.join('\n')}');
+      print('${linebreak}${instructions.join('\n')}');
       int? input = int.tryParse(stdin.readLineSync() ?? '0');
       switch (input) {
         case 1:
-          print(_new());
+          this.newBooking;
+          print(this.bookingList.last);
           break;
         case 2:
-          print(_search());
+          this.searchBooking;
           break;
         case 3:
-          print(_list());
+          this.listBooking;
           break;
         case 4:
-          print(_update());
+          this.updateBooking;
+          this.listBooking;
           break;
         case 5:
-          print(_remove());
+          this.removeBooking;
+          this.listBooking;
           break;
         default:
           exit(0);
@@ -45,23 +48,12 @@ class BookingCLI {
     }
   }
 
-  String _new() {
-    this.bookingList.add(bookings.create());
-    return this.bookingList.last.toString();
-  }
-
-  String _search() => bookings.search(this.bookingList);
-  String _list() => bookings.list(this.bookingList);
-
-  String _update() {
-    this.bookingList = bookings.update(this.bookingList);
-    return '${this._list()}';
-  }
-
-  String _remove() {
-    this.bookingList = bookings.remove(this.bookingList);
-    return '${this._list()}';
-  }
-
-  String _linebreak() => '--------------------\n';
+  void get newBooking => this.bookingList.add(bookings.create());
+  void get searchBooking => bookings.search(this.bookingList);
+  void get listBooking => print(this.bookingList);
+  void get updateBooking =>
+      this.bookingList = bookings.update(this.bookingList);
+  void get removeBooking =>
+      this.bookingList = bookings.remove(this.bookingList);
+  String get linebreak => '--------------------\n';
 }
