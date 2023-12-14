@@ -51,9 +51,7 @@ class BookingCLI {
   void get newBooking => this.bookingList.add(bookings.create());
   void get searchBooking => bookings.search(this.bookingList);
   void get listBooking => print(this.bookingList);
-  void get updateBooking =>
-      this.bookingList = bookings.update(this.bookingList);
-  void get removeBooking =>
-      this.bookingList = bookings.remove(this.bookingList);
+  void get updateBooking => this.bookingList = bookings.update(this.bookingList);
+  void get removeBooking => this.bookingList = bookings.remove(this.bookingList);
   String get linebreak => '--------------------\n';
 }

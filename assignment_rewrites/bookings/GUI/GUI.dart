@@ -28,12 +28,9 @@ class GUI {
     this.bookingDate = querySelector('#bookingDate') as InputElement;
     this.bookingID = querySelector('#bookingID') as InputElement;
     this.contactNumber = querySelector('#contactNumber') as InputElement;
-    this.propertyOwnerName =
-        querySelector('#propertyOwnerName') as InputElement;
-    this.securityAlarmCheck =
-        querySelector('#securityAlarmCheck') as CheckboxInputElement;
-    this.poolMaintenance =
-        querySelector('#poolMaintenance') as CheckboxInputElement;
+    this.propertyOwnerName = querySelector('#propertyOwnerName') as InputElement;
+    this.securityAlarmCheck = querySelector('#securityAlarmCheck') as CheckboxInputElement;
+    this.poolMaintenance = querySelector('#poolMaintenance') as CheckboxInputElement;
     this.submitButton = querySelector('#submit') as ButtonElement;
     this.searchButton = querySelector('#search') as ButtonElement;
     this.updateButton = querySelector('#update') as ButtonElement;
