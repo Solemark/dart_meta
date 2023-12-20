@@ -1,11 +1,7 @@
 class MultiplicationTables {
   int start = 0;
   int max = 0;
-
-  MultiplicationTables([int start = 0, int max = 0]) {
-    this.start = start;
-    this.max = max;
-  }
+  MultiplicationTables([this.start = 0, this.max = 0]);
 
   List<String> get table {
     List<String> output = [];

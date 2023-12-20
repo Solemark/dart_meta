@@ -1,9 +1,6 @@
 class HelloWorld {
   String? name = null;
-
-  HelloWorld([String? name = null]) {
-    this.name = name;
-  }
+  HelloWorld([this.name = null]);
 
   String get greet => this.name == null ? 'Hello world!' : 'Hello ${name}!';
 }

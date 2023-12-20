@@ -9,10 +9,7 @@ class GachaRoll {
   String output = '';
   String game = '';
   bool error = false;
-
-  GachaRoll(String game) {
-    this.game = game;
-  }
+  GachaRoll(this.game);
 
   String get play {
     switch (this.game) {

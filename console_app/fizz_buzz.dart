@@ -2,12 +2,7 @@ class Fizzbuzz {
   int fizz = 0;
   int buzz = 0;
   int max = 0;
-
-  Fizzbuzz(int fizz, int buzz, int max) {
-    this.fizz = fizz;
-    this.buzz = buzz;
-    this.max = max;
-  }
+  Fizzbuzz(this.fizz, this.buzz, this.max);
 
   String get play {
     String output = '';

@@ -1,9 +1,6 @@
 class Reverse {
   List<dynamic> input = [];
-
-  Reverse(List<dynamic> input) {
-    this.input = input;
-  }
+  Reverse(this.input);
 
   List<dynamic> get newArray {
     List<dynamic> output = [];

@@ -1,9 +1,6 @@
 class Palindrome {
   String input = '';
-
-  Palindrome(String input) {
-    this.input = input;
-  }
+  Palindrome(this.input);
 
   bool get test {
     int c = this.input.length - 1;
