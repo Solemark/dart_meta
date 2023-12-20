@@ -42,7 +42,7 @@ void main() {
   test('Test multiplication tables', () {
     int count = 0;
     for (var item in result) {
-      expect(item, multiplicationTables(table[count], 12));
+      expect(item, MultiplicationTables(table[count], 12).table);
       count++;
     }
   });

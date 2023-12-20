@@ -1,41 +1,39 @@
 import 'package:test/test.dart';
 import 'calculator.dart';
 
-List<List<double>> getData() => [
-      [5.5, 5.5],
-      [5.5, -5.5],
-      [-5.5, -5.5]
-    ];
-
 void main() {
-  List<List<double>> data = getData();
+  const List<List<double>> data = [
+    [5.5, 5.5],
+    [5.5, -5.5],
+    [-5.5, -5.5],
+  ];
   double result = 0;
   group('test calculator', () {
     test('addition', () {
       for (var row in data) {
         result = row[0] + row[1];
-        expect(result, addition(row[0], row[1]));
+        expect(result, Calculator(row[0], row[1]).add);
       }
     });
 
     test('subtraction', () {
       for (var row in data) {
         result = row[0] - row[1];
-        expect(result, subtraction(row[0], row[1]));
+        expect(result, Calculator(row[0], row[1]).subtract);
       }
     });
 
     test('multiplication', () {
       for (var row in data) {
         result = row[0] * row[1];
-        expect(result, multiplication(row[0], row[1]));
+        expect(result, Calculator(row[0], row[1]).multiply);
       }
     });
 
     test('division', () {
       for (var row in data) {
         result = row[0] / row[1];
-        expect(result, division(row[0], row[1]));
+        expect(result, Calculator(row[0], row[1]).divide);
       }
     });
   });

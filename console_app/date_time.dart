@@ -1,6 +1,9 @@
-String checkDate() {
-  var day = DateTime.now().day;
-  var month = DateTime.now().month;
-  var year = DateTime.now().year;
-  return '$day/$month/$year';
+class Datetime {
+  DateTime? date = null;
+
+  Datetime() {
+    this.date = DateTime.now();
+  }
+
+  String get current => '${this.date!.day}/${this.date!.month}/${this.date!.year}';
 }

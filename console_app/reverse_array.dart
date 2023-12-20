@@ -1,20 +1,26 @@
-List<int> reverseSameArray(List<int> input) {
-  int x = 0;
-  int y = 0;
-  int c = input.length - 1;
-  for (int i = 0; i < c; i++, c--) {
-    x = input[i];
-    y = input[c];
-    input[i] = y;
-    input[c] = x;
-  }
-  return input;
-}
+class Reverse {
+  List<dynamic> input = [];
 
-List<int> reverseArray(List<int> input) {
-  List<int> output = [];
-  for (int i = input.length - 1; i >= 0; i--) {
-    output.add(input[i]);
+  Reverse(List<dynamic> input) {
+    this.input = input;
   }
-  return output;
+
+  List<dynamic> get newArray {
+    List<dynamic> output = [];
+    for (int i = this.input.length - 1; i >= 0; i--) {
+      output.add(this.input[i]);
+    }
+    return output;
+  }
+
+  List<dynamic> get sameArray {
+    dynamic x, y = null;
+    for (int i = 0, c = this.input.length - 1; i < c; i++, c--) {
+      x = this.input[i];
+      y = this.input[c];
+      this.input[i] = y;
+      this.input[c] = x;
+    }
+    return this.input;
+  }
 }

@@ -6,6 +6,6 @@ void main() {
     var day = DateTime.now().day;
     var month = DateTime.now().month;
     var year = DateTime.now().year;
-    expect('$day/$month/$year', checkDate());
+    expect('$day/$month/$year', Datetime().current);
   });
 }

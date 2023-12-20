@@ -7,7 +7,7 @@ void main() {
   test('Check if string is palindrome', () {
     var (data, result) = getData();
     for (int i = 0; i < data.length - 1; i++) {
-      expect(result[i], checkPalindrome(data[i]));
+      expect(result[i], Palindrome(data[i]).test);
     }
   });
 }

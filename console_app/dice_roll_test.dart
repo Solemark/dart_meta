@@ -4,7 +4,7 @@ import 'dice_roll.dart';
 List<int> getData() => [4, 6, 8, 10, 12, 20];
 
 bool isBetween(int max) {
-  int number = diceRoll(max);
+  int number = Dice(max).roll;
   return (number <= max && number > 0) ? true : false;
 }
 

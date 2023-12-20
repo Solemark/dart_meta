@@ -31,16 +31,10 @@ void main() {
   });
 
   group('Test Write to CSV', () {
-    test('Test Filename Exists',
-        () async => expect(true, await File('$filename').exists()));
+    test('Test Filename Exists', () async => expect(true, await File('$filename').exists()));
     test(
         'Test File Has Data',
         () async => expect(
-            data,
-            await File('$filename')
-                .openRead()
-                .transform(utf8.decoder)
-                .transform(CsvToListConverter())
-                .toList()));
+            data, await File('$filename').openRead().transform(utf8.decoder).transform(CsvToListConverter()).toList()));
   });
 }
