@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'multiplication_tables.dart';
+import 'math_table.dart';
 
 (List<List<String>>, List<int>) getData() => (
       [
@@ -42,7 +42,7 @@ void main() {
   test('Test multiplication tables', () {
     int count = 0;
     for (var item in result) {
-      expect(item, MultiplicationTables(table[count], 12).table);
+      expect(item, MathTable(table[count], 12).table);
       count++;
     }
   });

@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'fizz_buzz.dart';
+import 'fizzbuzz.dart';
 
 void main() {
   test(

@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'reverse_array.dart';
+import 'reverse.dart';
 
 void main() {
   List<int> input = [];
