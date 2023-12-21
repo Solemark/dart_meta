@@ -1,0 +1,4 @@
+name: bim_calculator
+
+environment:
+  sdk: '^3.2.0'
