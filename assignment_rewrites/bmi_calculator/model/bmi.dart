@@ -22,5 +22,5 @@ class BMI {
   }
 
   @override
-  String toString() => "${this.height} ${this.weight} ${this.rating}";
+  String toString() => "height: ${this.height}\nweight: ${this.weight}\nrating: ${this.rating}";
 }
