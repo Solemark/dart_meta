@@ -11,10 +11,10 @@ class BMIView {
   TextAreaElement displayArea = TextAreaElement();
 
   BMIView() {
-    this.height = querySelector('#height') as InputElement;
-    this.weight = querySelector('#weight') as InputElement;
-    this.submitButton = querySelector('#submit') as ButtonElement;
-    this.clearButton = querySelector('#clear') as ButtonElement;
-    this.displayArea = querySelector('#displayArea') as TextAreaElement;
+    this.height = querySelector("#height") as InputElement;
+    this.weight = querySelector("#weight") as InputElement;
+    this.submitButton = querySelector("#submit") as ButtonElement;
+    this.clearButton = querySelector("#clear") as ButtonElement;
+    this.displayArea = querySelector("#displayArea") as TextAreaElement;
   }
 }

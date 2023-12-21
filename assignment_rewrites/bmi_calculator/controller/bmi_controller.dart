@@ -18,8 +18,8 @@ class BMIController {
    */
   void submit(Event e) {
     this.bmi = new BMI(
-      double.parse(this.view!.height.value ?? '0'),
-      double.parse(this.view!.weight.value ?? '0'),
+      double.parse(this.view!.height.value ?? "0"),
+      double.parse(this.view!.weight.value ?? "0"),
     );
     clear(e);
     this.view!.displayArea.value = this.bmi.toString();
@@ -29,8 +29,8 @@ class BMIController {
    * Clear's the view
    */
   void clear(Event e) {
-    this.view!.height.value = '';
-    this.view!.weight.value = '';
-    this.view!.displayArea.value = '';
+    this.view!.height.value = "";
+    this.view!.weight.value = "";
+    this.view!.displayArea.value = "";
   }
 }
