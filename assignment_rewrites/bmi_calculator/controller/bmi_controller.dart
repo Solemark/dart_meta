@@ -13,6 +13,7 @@ class BMIController {
     view!.submitButton.onClick.listen(this.submit);
     view!.clearButton.onClick.listen(this.clear);
   }
+
   /**
    * Submit button press
    */
