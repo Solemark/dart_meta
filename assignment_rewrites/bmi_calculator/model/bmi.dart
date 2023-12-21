@@ -8,6 +8,9 @@ class BMI {
   double weight;
   BMI(this.height, this.weight);
 
+  /**
+   * finds BMI rating from weight/height
+   */
   String get rating {
     String output = "";
     double total = this.weight / pow((this.height / 100), 2);

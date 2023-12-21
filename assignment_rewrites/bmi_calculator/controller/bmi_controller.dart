@@ -13,6 +13,9 @@ class BMIController {
     view!.submitButton.onClick.listen(this.submit);
     view!.clearButton.onClick.listen(this.clear);
   }
+  /**
+   * Submit button press
+   */
   void submit(Event e) {
     this.bmi = new BMI(
       double.parse(this.view!.height.value ?? '0'),
@@ -22,6 +25,9 @@ class BMIController {
     this.view!.displayArea.value = this.bmi.toString();
   }
 
+  /**
+   * Clear's the view
+   */
   void clear(Event e) {
     this.view!.height.value = '';
     this.view!.weight.value = '';
