@@ -4,7 +4,6 @@ import 'src/icon_handler.dart';
 import 'src/script_handler.dart';
 import 'src/style_handler.dart';
 import 'src/webpage_handler.dart';
-import 'src/index_handler.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_router/shelf_router.dart' as shelf_router;
