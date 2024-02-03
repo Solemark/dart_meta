@@ -1,0 +1,6 @@
+name: "advent_of_code_2023"
+
+environment: 
+  sdk: "^3.2.0"
+dependencies:
+  test: ^1.25.2
