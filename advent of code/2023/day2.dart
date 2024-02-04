@@ -11,9 +11,9 @@ bool _play_game(List<String> game, Map<String, int> dice) {
   return _determine_result(round_results);
 }
 
-Iterable<bool> _check_game(List<String> game, Map<String, int> dice) => game.map((round) => check_round(round, dice));
+Iterable<bool> _check_game(List<String> game, Map<String, int> dice) => game.map((round) => _check_round(round, dice));
 
-bool check_round(String round, Map<String, int> dice) {
+bool _check_round(String round, Map<String, int> dice) {
   final List<String> components = round.split(" ");
   return int.parse(components[0]) <= dice[components[1]]! ? true : false;
 }
