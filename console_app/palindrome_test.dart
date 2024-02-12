@@ -1,13 +1,9 @@
 import 'package:test/test.dart';
 import 'palindrome.dart';
 
-(List<String>, List<bool>) getData() => (['DAD', 'Dad'], [true, false]);
-
 void main() {
-  test('Check if string is palindrome', () {
-    var (data, result) = getData();
-    for (int i = 0; i < data.length - 1; i++) {
-      expect(result[i], Palindrome(data[i]).test);
-    }
+  group("test if palindrome checks string", () {
+    test("is DAD a palindrome", () => expect(true, is_palindrome("DAD")));
+    test("is Dad a palindrome", () => expect(false, is_palindrome("Dad")));
   });
 }

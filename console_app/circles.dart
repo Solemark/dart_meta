@@ -1,9 +1,4 @@
 import 'dart:math';
 
-class Circles {
-  num radius;
-  Circles(this.radius);
-
-  num get area => this.radius <= 0 ? 0 : pi * pow(this.radius, 2);
-  num get circumference => this.radius <= 0 ? 0 : 2 * pi * this.radius;
-}
+num calc_area(num radius) => radius <= 0 ? 0 : pi * pow(radius, 2);
+num calc_circ(num radius) => radius <= 0 ? 0 : 2 * pi * radius;

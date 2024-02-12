@@ -1,9 +1,4 @@
-class Calculator {
-  num x, y;
-  Calculator(this.x, this.y);
-
-  num get add => this.x + this.y;
-  num get subtract => this.x - this.y;
-  num get multiply => this.x * this.y;
-  num get divide => this.x / this.y;
-}
+num add(num x, num y) => x + y;
+num subtract(num x, num y) => x - y;
+num multiply(num x, num y) => x * y;
+num divide(num x, num y) => x / y;

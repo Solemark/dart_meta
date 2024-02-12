@@ -1,6 +1,1 @@
-class Sort {
-  List<double> data = [];
-  Sort(this.data);
-
-  List<double> get numerical => this.data..sort();
-}
+List<num> numerical_sort(List<num> data) => data..sort();
