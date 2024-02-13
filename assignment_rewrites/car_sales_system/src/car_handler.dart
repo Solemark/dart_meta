@@ -11,5 +11,5 @@ Future<Response> carHandler(Request request, String type, String function) async
 Future<Response> carDataHandler(Request request, String type) async => Response(
       200,
       headers: jsonHeaders,
-      body: await File("data/car$type.csv").readAsString(),
+      body: await File("data/car-$type.csv").readAsString(),
     );
