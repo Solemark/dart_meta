@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'day1.dart';
 
 void main() {
-  const List<String> data = [
+  const Iterable<String> data = [
     "1000",
     "2000",
     "3000",
