@@ -1,8 +1,8 @@
 name: console_app
 
 environment:
-  sdk: '^3.1.0'
+  sdk: '^3.3.1'
 dev_dependencies:
   test: ^1.24.6
 dependencies:
-  csv: ^5.0.2
+  csv: ^6.0.0
