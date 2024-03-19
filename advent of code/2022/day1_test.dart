@@ -19,7 +19,7 @@ void main() {
     "10000",
   ];
 
-  test('addition', () {
+  test('test day 1', () {
     expect(4, day1(data, []));
   });
 }
