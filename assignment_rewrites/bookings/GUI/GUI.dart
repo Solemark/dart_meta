@@ -1,41 +1,43 @@
-import 'dart:html';
+import 'package:web/web.dart';
 import '../data/Booking.dart';
 
 class GUI {
   List<Luxury> bookingList = [];
-  InputElement gardenArea = InputElement();
-  InputElement numberOfWeeks = InputElement();
-  InputElement rooms = InputElement();
-  InputElement address = InputElement();
-  InputElement bookingDate = InputElement();
-  InputElement bookingID = InputElement();
-  InputElement contactNumber = InputElement();
-  InputElement propertyOwnerName = InputElement();
-  CheckboxInputElement securityAlarmCheck = CheckboxInputElement();
-  CheckboxInputElement poolMaintenance = CheckboxInputElement();
-  ButtonElement submitButton = ButtonElement();
-  ButtonElement searchButton = ButtonElement();
-  ButtonElement updateButton = ButtonElement();
-  ButtonElement removeButton = ButtonElement();
-  ButtonElement clearButton = ButtonElement();
-  TextAreaElement displayArea = TextAreaElement();
+  HTMLInputElement gardenArea = HTMLInputElement();
+  HTMLInputElement numberOfWeeks = HTMLInputElement();
+  HTMLInputElement rooms = HTMLInputElement();
+  HTMLInputElement address = HTMLInputElement();
+  HTMLInputElement bookingDate = HTMLInputElement();
+  HTMLInputElement bookingID = HTMLInputElement();
+  HTMLInputElement contactNumber = HTMLInputElement();
+  HTMLInputElement propertyOwnerName = HTMLInputElement();
+  HTMLInputElement securityAlarmCheck = HTMLInputElement();
+  HTMLInputElement poolMaintenance = HTMLInputElement();
+  HTMLButtonElement submitButton = HTMLButtonElement();
+  HTMLButtonElement searchButton = HTMLButtonElement();
+  HTMLButtonElement updateButton = HTMLButtonElement();
+  HTMLButtonElement removeButton = HTMLButtonElement();
+  HTMLButtonElement clearButton = HTMLButtonElement();
+  HTMLTextAreaElement displayArea = HTMLTextAreaElement();
 
   GUI() {
-    this.gardenArea = querySelector('#gardenArea') as InputElement;
-    this.numberOfWeeks = querySelector('#numberOfWeeks') as InputElement;
-    this.rooms = querySelector('#rooms') as InputElement;
-    this.address = querySelector('#address') as InputElement;
-    this.bookingDate = querySelector('#bookingDate') as InputElement;
-    this.bookingID = querySelector('#bookingID') as InputElement;
-    this.contactNumber = querySelector('#contactNumber') as InputElement;
-    this.propertyOwnerName = querySelector('#propertyOwnerName') as InputElement;
-    this.securityAlarmCheck = querySelector('#securityAlarmCheck') as CheckboxInputElement;
-    this.poolMaintenance = querySelector('#poolMaintenance') as CheckboxInputElement;
-    this.submitButton = querySelector('#submit') as ButtonElement;
-    this.searchButton = querySelector('#search') as ButtonElement;
-    this.updateButton = querySelector('#update') as ButtonElement;
-    this.removeButton = querySelector('#remove') as ButtonElement;
-    this.clearButton = querySelector('#clear') as ButtonElement;
-    this.displayArea = querySelector('#displayArea') as TextAreaElement;
+    this.securityAlarmCheck.setAttribute("type", "checkbox");
+    this.poolMaintenance.setAttribute("type", "checkbox");
+    this.gardenArea = document.querySelector('#gardenArea') as HTMLInputElement;
+    this.numberOfWeeks = document.querySelector('#numberOfWeeks') as HTMLInputElement;
+    this.rooms = document.querySelector('#rooms') as HTMLInputElement;
+    this.address = document.querySelector('#address') as HTMLInputElement;
+    this.bookingDate = document.querySelector('#bookingDate') as HTMLInputElement;
+    this.bookingID = document.querySelector('#bookingID') as HTMLInputElement;
+    this.contactNumber = document.querySelector('#contactNumber') as HTMLInputElement;
+    this.propertyOwnerName = document.querySelector('#propertyOwnerName') as HTMLInputElement;
+    this.securityAlarmCheck = document.querySelector('#securityAlarmCheck') as HTMLInputElement;
+    this.poolMaintenance = document.querySelector('#poolMaintenance') as HTMLInputElement;
+    this.submitButton = document.querySelector('#submit') as HTMLButtonElement;
+    this.searchButton = document.querySelector('#search') as HTMLButtonElement;
+    this.updateButton = document.querySelector('#update') as HTMLButtonElement;
+    this.removeButton = document.querySelector('#remove') as HTMLButtonElement;
+    this.clearButton = document.querySelector('#clear') as HTMLButtonElement;
+    this.displayArea = document.querySelector('#displayArea') as HTMLTextAreaElement;
   }
 }
