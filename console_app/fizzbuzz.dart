@@ -1,8 +1,14 @@
-String fizzbuzz(int fizz, int buzz, int max, [String output = "", int current = 1]) {
-  if (current > max) return output;
-  current % fizz == 0 ? output += "fizz" : null;
-  current % buzz == 0 ? output += "buzz" : null;
-  !output.endsWith("z") ? output += "$current" : null;
-  current != max ? output += "\n" : null;
-  return fizzbuzz(fizz, buzz, max, output, ++current);
+String fizzbuzz(int fizz, int buzz, int max) {
+  String output = "";
+  for (final i in List.generate(max, (i) => i + 1)) {
+    if (i % fizz == 0) output += "fizz";
+    if (i % buzz == 0) output += "buzz";
+    if (!output.endsWith("z")) output += "$i";
+    if (i != max) output += "\n";
+  }
+  return output;
+}
+
+void main() {
+  print(fizzbuzz(3, 5, 20));
 }

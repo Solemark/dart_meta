@@ -1,7 +1,7 @@
-bool check_palindrome(String input) => _check(input, 0, input.length - 1);
-
-bool _check(String input, int left, int right) {
-  if (left >= right) return true;
-  if (input[left] != input[right]) return false;
-  return _check(input, left + 1, right - 1);
+bool check_palindrome(String input) {
+  for (int i = 0; i < input.length; i++) {
+    if (i > input.length - 1) break;
+    if (input[i] != input[input.length - (i + 1)]) return false;
+  }
+  return true;
 }

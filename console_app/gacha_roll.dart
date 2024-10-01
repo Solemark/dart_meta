@@ -8,8 +8,10 @@ String gacha_roll(String game) {
   return output;
 }
 
-String _play(int rate, int pity, int rarity, String game, [int rolls = 1]) {
-  if (rolls == pity) return "You hit pity at $rolls rolls for your $rarity in ${game}";
-  if (Random().nextInt(rate + 1) == rate) return "It took $rolls rolls to get a $rarity in ${game}";
-  return _play(rate, pity, rarity, game, ++rolls);
+String _play(int rate, int pity, int rarity, String game) {
+  int rolls = 1;
+  while (true) {
+    if (rolls == pity) return "You hit pity at $rolls rolls for your $rarity in $game";
+    if (Random().nextInt(rate + 1) == rate) return "It took $rolls rolls to get a $rarity in $game";
+  }
 }
