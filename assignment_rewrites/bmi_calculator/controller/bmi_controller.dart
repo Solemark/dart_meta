@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'package:web/web.dart';
 import '../model/bmi.dart';
 import '../view/bmi_view.dart';
 
@@ -19,8 +19,8 @@ class BMIController {
    */
   void submit(Event e) {
     this.bmi = new BMI(
-      double.parse(this.view!.height.value ?? "0"),
-      double.parse(this.view!.weight.value ?? "0"),
+      double.parse(this.view!.height.value),
+      double.parse(this.view!.weight.value),
     );
     clear(e);
     this.view!.displayArea.value = this.bmi.toString();
