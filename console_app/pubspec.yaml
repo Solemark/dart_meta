@@ -3,6 +3,6 @@ name: console_app
 environment:
   sdk: '^3.3.1'
 dev_dependencies:
-  test: ^1.24.6
+  test: ^1.25.8
 dependencies:
   csv: ^6.0.0
